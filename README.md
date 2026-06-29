@@ -33,6 +33,7 @@ kilo.jsonc                        KiloCode: instructions -> ponytail.md
     ponytail-instructions.js      builds the ruleset text from SKILL.md
     ponytail-config.js            mode resolution (env / config file)
     ponytail-runtime.js           hook I/O helpers
+    ponytail-statusline.{sh,ps1}  optional status bar badge ([PONYTAIL])
 ```
 
 `SKILL.md` does double duty: Claude Code auto-loads it as a **skill**, and the
@@ -50,9 +51,15 @@ Verify the hook emits the ruleset (this is exactly what Claude Code runs):
 CLAUDE_PROJECT_DIR="$PWD" node .claude/hooks/ponytail-activate.js
 # -> "PONYTAIL MODE ACTIVE — level: full" followed by the ruleset
 ```
-> Windows: use the PowerShell hook form from upstream
-> (`hooks/ponytail-statusline.ps1` / `commandWindows`). This example keeps the
-> POSIX `command` only.
+Optional: on first run the hook nudges you to add a status bar badge. To enable
+it, add to `~/.claude/settings.json`:
+```json
+"statusLine": { "type": "command", "command": "bash \"$PWD/.claude/hooks/ponytail-statusline.sh\"" }
+```
+
+> Windows: the hook also wires a PowerShell statusline
+> (`.claude/hooks/ponytail-statusline.ps1`). The SessionStart `command` itself is
+> POSIX-only here; for the Windows `commandWindows` form see upstream.
 
 ### OpenCode
 `opencode.json` lists `./ponytail.md` under `instructions`, so OpenCode loads it
