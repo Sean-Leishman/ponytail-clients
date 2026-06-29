@@ -1,0 +1,6 @@
+{
+  // KiloCode loads each file listed here as always-on project rules.
+  // Back-compat alternative (no config needed): drop ponytail.md into
+  // .kilocode/rules/ and KiloCode auto-loads it.
+  "instructions": ["./ponytail.md"]
+}
