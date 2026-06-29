@@ -41,6 +41,25 @@ kilo.jsonc                        KiloCode: instructions -> ponytail.md
 `SKILL.md` does double duty: Claude Code auto-loads it as a **skill**, and the
 **hook** reads the same file (`../skills/ponytail/SKILL.md`) — one source, no copy.
 
+## Install globally (every project)
+
+The configs in this repo are **project-scoped** — ponytail is only active when an
+agent opens *this* repo. To make it always-on in **every** project, run the
+installer:
+
+```bash
+./install.sh            # Claude Code + OpenCode + KiloCode
+./install.sh claude     # or just the clients you name (claude | opencode | kilo)
+```
+
+It installs into your user config (`~/.claude`, `~/.config/opencode`,
+`~/.config/kilo`), is **idempotent**, and backs up (`.bak`) any settings file it
+edits before merging — it won't clobber existing hooks or instructions. Requires
+`node`.
+
+> Prefer the upstream-maintained Claude Code plugin? `/plugin marketplace add
+> DietrichGebert/ponytail` then `/plugin install ponytail@ponytail`.
+
 ## Setup & verify
 
 ### Claude Code
