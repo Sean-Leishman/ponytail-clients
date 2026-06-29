@@ -1,5 +1,7 @@
 # ponytail-clients
 
+[![upstream: DietrichGebert/ponytail](https://img.shields.io/badge/upstream-DietrichGebert%2Fponytail-111111?style=flat-square&logo=github)](https://github.com/DietrichGebert/ponytail)
+
 A minimal, self-contained example of running **[Ponytail](https://github.com/DietrichGebert/ponytail)**
 (lazy-senior-dev mode: YAGNI, stdlib first, smallest correct change) **always-on**
 in three agents — **Claude Code**, **OpenCode**, and **KiloCode** — using each
