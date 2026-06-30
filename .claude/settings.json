@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"${CLAUDE_PROJECT_DIR}/.claude/hooks/ponytail-activate.js\"; exit 0",
+            "command": "cat \"${CLAUDE_PROJECT_DIR}/.claude/skills/ponytail/SKILL.md\"; exit 0",
             "timeout": 5
           }
         ]
